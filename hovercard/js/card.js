@@ -16,8 +16,12 @@ function mouseMove(e){
     //왼쪽여백X 를 빼면 마우스가 위치하는 x좌표를 얻을 수 있다 == left
     const left = e.clientX - x
     const top = e.clientY - y
+    //left값에서 width의 절반값을 빼주면 중심에서 x축으로 마우스가 얼마나 
+    //떨어졌는지 알 수 있다.
     const centerX = left - width / 2
     const centerY = top - height / 2
+    //transform : rotate3d값
+    //Math.sqrt() 함수는 숫자의 제곱근을 반환한다
     const d = Math.sqrt(centerX**2 + centerY**2)
 
     card.style.boxShadow = `
@@ -29,6 +33,8 @@ function mouseMove(e){
             ${-centerY / 100}, ${centerX / 100}, 0, ${d / 10}deg
         )
     `
+    //radial-gradient로 원형 그라데이션 효과
+    //radial-gradient( shape size at position, color1, color2, ..., color3 )
     light.style.backgroundImage = `
         radial-gradient(
             circle at ${left}px ${top}px, #00000010, #ffffff00, #ffffff70
