@@ -20,6 +20,7 @@ initTexts(pTag2, textArr2)
 let count1 = 0
 let count2 = 0
 
+//marqueeText는 아래와 같이 움직일꺼야
 function marqueeText(count, element, direction){
     if(count > element.scrollWidth / 2){
         //만일 count가 element scrollWidth의 절반값 이상 이라면
@@ -32,6 +33,10 @@ function marqueeText(count, element, direction){
     element.style.transform = `translate(${count * direction}px)`
     return count
 }
+
+//c = 2
+//c = c+1
+//consol.log(c)==3
 
 function animate(){
     count1++
